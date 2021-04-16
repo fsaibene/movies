@@ -1,0 +1,11 @@
+<div class="jumbotron">
+    <div class="container">
+        <h1>Tabla Peliculas</h1>
+        <ul>
+            <li *ngFor="let movie of movies">
+                <span>{{movie.name}}</span>
+                <button (click)="movieSelected(movie)">Seleccionar Pelicula</button>
+            </li>
+        </ul>
+    </div>
+  </div>

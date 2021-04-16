@@ -1,0 +1,9 @@
+<div *ngIf="!peliculaNueva" class="container">
+    <button (click)="createNewMovie()">Crear</button>
+</div>
+
+<div *ngIf="peliculaNueva" class="container">
+    <input [(ngModel)]="peliculaNueva.name" type="text">
+    <button (click)="saveMovie()">Guardar</button>
+    {{peliculaNueva.name}}
+</div>
