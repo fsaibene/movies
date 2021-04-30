@@ -9,8 +9,12 @@ import { MenuComponent } from './components/core/menu/menu.component';
 import { TablaPeliculaComponent } from './components/tabla-pelicula/tabla-pelicula.component';
 import { MovieDetailComponent } from './components/movie-detail/movie-detail.component';
 import { CreateMovieComponent } from './components/create-movie/create-movie.component';
-import { FormsModule } from '@angular/forms';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ActorsComponent } from './components/actors/actors.component';
+import { CountryListComponent } from './components/country-list/country-list.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ServicioPaisesService } from './services/servicio-paises.service';
+import { firebaseConfig } from 'src/firebase-config';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,14 +23,19 @@ import { FormsModule } from '@angular/forms';
     MenuComponent,
     TablaPeliculaComponent,
     MovieDetailComponent,
-    CreateMovieComponent
+    CreateMovieComponent,
+    ActorsComponent,
+    CountryListComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
-  providers: [],
+  providers: [ServicioPaisesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

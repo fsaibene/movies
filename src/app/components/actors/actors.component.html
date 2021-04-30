@@ -1,0 +1,56 @@
+<div class="container">
+    <div class="py-5 text-center">
+    <h2>Alta actores</h2>
+    </div>
+
+    <div class="row">
+    <div class="col-md-4 order-md-2 mb-4">
+        <app-country-list (seleccionpais)="seleccionarPais($event)"></app-country-list>
+    </div>
+    <div class="col-md-8 order-md-1">
+        <h4 class="mb-3">Nuevo actor</h4>
+        <form class="needs-validation" [formGroup]="fg">
+        <div class="row">
+            <div class="col-md-6 mb-3">
+            <label for="firstName">Nombre</label>
+            <input type="text" class="form-control" id="firstName" placeholder="" value="" formControlName="nombre">
+            </div>
+            <div class="col-md-6 mb-3">
+            <label for="lastName">Apellido</label>
+            <input type="text" class="form-control" id="lastName" placeholder="" value="" formControlName="apellido">
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label for="username">Nombre artistico</label>
+            <div class="input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text">@</span>
+            </div>
+            <input type="text" class="form-control" id="username" placeholder="Nombre artistico" formControlName="nombreArtistico">
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label for="email">Email <span class="text-muted">(Optional)</span></label>
+            <input type="email" class="form-control" id="email" placeholder="you@example.com" formControlName="email">
+        </div>
+
+        <div class="mb-3">
+            <label for="address">Direccion</label>
+            <input type="text" class="form-control" id="direccion" placeholder="Calle falsa 123" formControlName="direccion">
+        </div>
+        <div class="mb-3">
+            <label for="address">Edad</label>
+            <input type="number" class="form-control" id="edad" placeholder="Edad" formControlName="edad">
+        </div>
+        <hr class="mb-4">
+        <button class="btn btn-primary btn-lg btn-block" type="submit">Alta</button>
+        </form>
+    </div>
+    </div>
+
+    <footer class="my-5 pt-5 text-muted text-center text-small">
+    <p class="mb-1">&copy; Fernando Saibene</p>
+    </footer>
+</div>
