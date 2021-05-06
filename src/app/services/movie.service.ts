@@ -18,6 +18,15 @@ export class MovieService {
     }
 
     public create(movie: Pelicula) {
+        return this.menssagesRef.doc(movie.id.toString()).set(({...movie}));
+    }
+
+    public create2(movie: Pelicula) {
         return this.menssagesRef.add({...movie});
+    }
+    
+    public delete(movie: Pelicula) {
+        movie.deleted = true;
+        return this.menssagesRef.doc(movie.id.toString()).update(movie);
     }
 }

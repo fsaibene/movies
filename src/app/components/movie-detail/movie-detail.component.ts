@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Pelicula } from 'src/app/classes/pelicula';
+import { MovieService } from 'src/app/services/movie.service';
 
 @Component({
   selector: 'app-movie-detail',

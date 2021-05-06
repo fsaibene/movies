@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 import { Pelicula } from 'src/app/classes/pelicula';
 import { MovieService } from 'src/app/services/movie.service';
 
@@ -21,7 +22,11 @@ export class BusquedaPeliculaComponent implements OnInit {
     }
 
     public ngOnInit(): void {
-        this.movies$ = this.movieService.getAll().valueChanges();
+        this.movies$ = this.movieService.getAll().valueChanges()
+        .pipe(map(values => values.filter(p => !p.deleted)));
+        let asd = this.movieService.getAll().doc();
+        console.log(asd)
+        this.movies$.subscribe(v => console.log(v));
     }
     
     public creacionPelicula(movie: Pelicula) {

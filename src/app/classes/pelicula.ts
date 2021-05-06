@@ -5,4 +5,5 @@ export class Pelicula {
     public fechaEstreno: string;
     public cantidadDePublico: string;
     public fotoDePelicula: string;
+    public deleted: boolean = false;
 }

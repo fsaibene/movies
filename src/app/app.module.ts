@@ -18,6 +18,7 @@ import { firebaseConfig } from 'src/firebase-config';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFireModule } from '@angular/fire';
 import { ErrorComponent } from './components/core/error/error.component';
+import { DeleteMovieComponent } from './components/delete-movie/delete-movie.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +30,8 @@ import { ErrorComponent } from './components/core/error/error.component';
     CreateMovieComponent,
     ActorsComponent,
     CountryListComponent,
-    ErrorComponent
+    ErrorComponent,
+    DeleteMovieComponent
   ],
   imports: [
     BrowserModule,

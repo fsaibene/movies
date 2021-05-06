@@ -20,6 +20,7 @@ export class CreateMovieComponent implements OnInit{
 
     ngOnInit(): void {
         this.fg =  this.fb.group({
+            'id': ['', [Validators.required]],
             'name': ['', [Validators.required, Validators.maxLength(100)]],
             'tipo': ['', [Validators.required, Validators.maxLength(100)]],
             'fechaEstreno': ['', [Validators.required, Validators.maxLength(12)]],
@@ -35,6 +36,7 @@ export class CreateMovieComponent implements OnInit{
         this.needValidate.next(true);
         if(form.valid) {
             let pelicula = new Pelicula();
+            pelicula.id = this.fg.controls["id"].value;
             pelicula.name = this.fg.controls["name"].value;
             pelicula.tipo = this.fg.controls["tipo"].value;
             pelicula.fechaEstreno = this.fg.controls["fechaEstreno"].value;
