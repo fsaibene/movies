@@ -7,7 +7,10 @@ import { BusquedaPeliculaComponent } from './components/busqueda-pelicula/busque
 const routes: Routes = [
     { path: 'busqueda', component: BusquedaPeliculaComponent},
     { path: 'bienvenido', component: BienvenidoComponent },
-    { path: 'cargaactores', component: ActorsComponent },
+    { path: 'cargaactores', component: ActorsComponent },{
+        path: 'peliculas',
+        loadChildren: () => import('./modules/peliculas/peliculas.module').then(m => m.PeliculasModule)
+    },
     { path: '', pathMatch: 'full', redirectTo: 'busqueda' }
 ];
 @NgModule({

@@ -2,6 +2,7 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { Pelicula } from 'src/app/classes/pelicula';
+import { MovieService } from 'src/app/services/movie.service';
 
 @Component({
   selector: 'app-create-movie',
@@ -10,11 +11,11 @@ import { Pelicula } from 'src/app/classes/pelicula';
 })
 export class CreateMovieComponent implements OnInit{
     @Output() eventCreateMovie: EventEmitter<any> = new EventEmitter<any>();
-    public creandoPelicula: boolean = false;
+    public creandoPelicula: boolean = true;
     public fg: FormGroup;
     public needValidate: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
     public needValidate$: Observable<boolean> = this.needValidate.asObservable();
-    constructor(private fb: FormBuilder){
+    constructor(private fb: FormBuilder, private movieService: MovieService){
 
     }
 
@@ -30,7 +31,7 @@ export class CreateMovieComponent implements OnInit{
      }
 
     public saveMovie(pelicula): void {
-        this.eventCreateMovie.emit(pelicula);
+        this.movieService.create(pelicula);
     }
     public onSubmit(form): void {
         this.needValidate.next(true);
@@ -49,5 +50,6 @@ export class CreateMovieComponent implements OnInit{
     
     public createNewMovie(): void {
         this.creandoPelicula = true;
+        this.fg.reset();
     }
 }

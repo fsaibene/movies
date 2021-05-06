@@ -27,7 +27,6 @@ import { DeleteMovieComponent } from './components/delete-movie/delete-movie.com
     MenuComponent,
     TablaPeliculaComponent,
     MovieDetailComponent,
-    CreateMovieComponent,
     ActorsComponent,
     CountryListComponent,
     ErrorComponent,

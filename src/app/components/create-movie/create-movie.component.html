@@ -1,4 +1,5 @@
 <div *ngIf="!creandoPelicula" class="container">
+    Pelicula creada! Desea crear una nueva?
     <button (click)="createNewMovie()">Crear</button>
 </div>
 
@@ -36,5 +37,5 @@
             <app-error [needValidate$]="needValidate$" [control]="fg.controls['foto']" ></app-error>
         </div>
         <button type="submit" class="btn btn-primary">Guardar pelicula</button>
-    </form>>
+    </form>
 </div>
