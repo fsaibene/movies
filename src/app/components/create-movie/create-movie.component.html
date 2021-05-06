@@ -1,9 +1,35 @@
-<div *ngIf="!peliculaNueva" class="container">
+<div *ngIf="!creandoPelicula" class="container">
     <button (click)="createNewMovie()">Crear</button>
 </div>
 
-<div *ngIf="peliculaNueva" class="container">
-    <input [(ngModel)]="peliculaNueva.name" type="text">
-    <button (click)="saveMovie()">Guardar</button>
-    {{peliculaNueva.name}}
+<div *ngIf="creandoPelicula" class="container">
+    <form class="contenedor" [formGroup]="fg" (ngSubmit)="onSubmit(fg)">
+
+        <div class="form-group">
+            <label for="exampleInputEmail1">Nombre </label>
+            <input type="text" formControlName="name" class="form-control" required>
+            <app-error [needValidate$]="needValidate$" [control]="fg.controls['name']" ></app-error>
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Género</label>
+            <input type="text" id="tipo" formControlName="tipo" class="form-control" required>
+            <app-error [needValidate$]="needValidate$" [control]="fg.controls['tipo']" ></app-error>
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Fecha de estreno</label>
+            <input type="text" formControlName="fechaEstreno" class="form-control" required>
+            <app-error [needValidate$]="needValidate$" [control]="fg.controls['fechaEstreno']" ></app-error>
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Cantidad de publico</label>
+            <input type="number" formControlName="cantidadDePublico" class="form-control" required>
+            <app-error [needValidate$]="needValidate$" [control]="fg.controls['cantidadDePublico']" ></app-error>
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Link a foto</label>
+            <input type="text" formControlName="fotoDePelicula" class="form-control">
+            <app-error [needValidate$]="needValidate$" [control]="fg.controls['foto']" ></app-error>
+        </div>
+        <button type="submit" class="btn btn-primary">Guardar pelicula</button>
+    </form>>
 </div>

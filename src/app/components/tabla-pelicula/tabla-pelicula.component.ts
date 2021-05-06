@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Observable } from 'rxjs';
 import { Pelicula } from 'src/app/classes/pelicula';
 
 @Component({
@@ -7,7 +8,7 @@ import { Pelicula } from 'src/app/classes/pelicula';
   styleUrls: ['./tabla-pelicula.component.css']
 })
 export class TablaPeliculaComponent {
-    @Input() movies: Array<Pelicula>;
+    @Input() movies$: Observable<Pelicula[]>;
     @Output() selectedMovieEvent: EventEmitter<any> = new EventEmitter<any>();
     constructor() { }
     

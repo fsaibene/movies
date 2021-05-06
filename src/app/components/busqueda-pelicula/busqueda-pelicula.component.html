@@ -1,6 +1,6 @@
     <main role="main">
       <!-- Main jumbotron for a primary marketing message or call to action -->
-      <app-tabla-pelicula (selectedMovieEvent)="loadSelectedMovie($event)" [movies]="movieList"></app-tabla-pelicula>
+      <app-tabla-pelicula (selectedMovieEvent)="loadSelectedMovie($event)" [movies$]="movies$"></app-tabla-pelicula>
       <app-create-movie (eventCreateMovie)="creacionPelicula($event)"></app-create-movie>
       <div class="container">
         <!-- Example row of columns -->

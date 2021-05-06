@@ -15,6 +15,9 @@ import { CountryListComponent } from './components/country-list/country-list.com
 import { HttpClientModule } from '@angular/common/http';
 import { ServicioPaisesService } from './services/servicio-paises.service';
 import { firebaseConfig } from 'src/firebase-config';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { AngularFireModule } from '@angular/fire';
+import { ErrorComponent } from './components/core/error/error.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +28,8 @@ import { firebaseConfig } from 'src/firebase-config';
     MovieDetailComponent,
     CreateMovieComponent,
     ActorsComponent,
-    CountryListComponent
+    CountryListComponent,
+    ErrorComponent
   ],
   imports: [
     BrowserModule,
@@ -34,6 +38,8 @@ import { firebaseConfig } from 'src/firebase-config';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireDatabaseModule
   ],
   providers: [ServicioPaisesService],
   bootstrap: [AppComponent]
