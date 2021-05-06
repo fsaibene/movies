@@ -12,9 +12,9 @@ export class BusquedaPeliculaComponent {
 
     constructor() { 
         this.movieList = [
-            {id: 0, name: "Peli Comedia", tipo: "comedia", fechaEstreno: "10/10/2010", cantidadDePublico: "111", fotoDePelicula: "https://www.themoviedb.org/t/p/w220_and_h330_face/pgqgaUx1cJb5oZQQ5v0tNARCeBp.jpg"},
-            {id: 1, name: "Peli amor", tipo: "amough", fechaEstreno: "10/10/2014", cantidadDePublico: "332", fotoDePelicula: "https://www.themoviedb.org/t/p/w220_and_h330_face/tnAuB8q5vv7Ax9UAEje5Xi4BXik.jpg"},
-            {id: 2, name: "Peli Terror", tipo: "error", fechaEstreno: "10/10/2015", cantidadDePublico: "255", fotoDePelicula: "https://www.themoviedb.org/t/p/w220_and_h330_face/6KErczPBROQty7QoIsaa6wJYXZi.jpg"},
+            {id: 0, name: "Peli Comedia", tipo: "Comedia", fechaEstreno: "10/10/2010", cantidadDePublico: "111", fotoDePelicula: "https://www.themoviedb.org/t/p/w220_and_h330_face/pgqgaUx1cJb5oZQQ5v0tNARCeBp.jpg"},
+            {id: 1, name: "Peli amor", tipo: "Amor", fechaEstreno: "10/10/2014", cantidadDePublico: "332", fotoDePelicula: "https://www.themoviedb.org/t/p/w220_and_h330_face/tnAuB8q5vv7Ax9UAEje5Xi4BXik.jpg"},
+            {id: 2, name: "Peli Terror", tipo: "Terror", fechaEstreno: "10/10/2015", cantidadDePublico: "255", fotoDePelicula: "https://www.themoviedb.org/t/p/w220_and_h330_face/6KErczPBROQty7QoIsaa6wJYXZi.jpg"},
         ]
     }
     

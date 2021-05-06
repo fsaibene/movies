@@ -1,11 +1,27 @@
 <div class="jumbotron">
     <div class="container">
         <h1>Tabla Peliculas</h1>
-        <ul>
-            <li *ngFor="let movie of movies">
-                <span>{{movie.name}}</span>
-                <button (click)="movieSelected(movie)">Seleccionar Pelicula</button>
-            </li>
-        </ul>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Género</th>
+                    <th scope="col">Fecha de estreno</th>
+                    <th scope="col">Cantidad de público</th>
+                    <th scope="col">Acción</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let movie of movies">
+                    <th scope="row">{{movie.name}}</th>
+                    <td>{{movie.tipo}}</td>
+                    <td>{{movie.fechaEstreno}}</td>
+                    <td>{{movie.cantidadDePublico}}</td>
+                    <td>
+                        <button (click)="movieSelected(movie)">Seleccionar Pelicula</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
     </div>
-  </div>
+</div>
